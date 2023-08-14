@@ -1,0 +1,114 @@
+{
+    "Generate Image": {
+    "url_segments": "posts/init_gen_image",
+    "request_type": "POST",
+    "description": "Generate an image using OpenAI.",
+    "enableParams": true,
+    "authorization":"*"
+    },
+
+  "Get": {
+    "url_segments": "api/get/posts",
+    "request_type": "GET",
+    "description": "Fetch rows from table",
+    "enableParams": true,
+    "authorization":{  
+        "roles": [
+            "admin"
+        ]
+    }
+  },
+  "Get By Post": {
+    "url_segments": "api/get/posts",
+    "request_type": "POST",
+    "description": "Fetch rows from table using POST request.",
+    "enableParams": true,
+    "authorization":{  
+        "roles": [
+            "admin"
+        ]
+    }
+  },
+  "Find One": {
+    "url_segments": "api/get/posts/{id}",
+    "request_type": "GET",
+    "description": "Fetch one row",
+    "required_fields": [
+      {
+        "name": "id",
+        "label": "ID"
+      }
+    ]
+  },
+  "Exists": {
+    "url_segments": "api/exists/posts/{id}",
+    "request_type": "GET",
+    "description": "Check if instance exists",
+    "required_fields": [
+      {
+        "name": "id",
+        "label": "ID"
+      }
+    ]
+  },
+  "Count": {
+    "url_segments": "api/count/posts",
+    "request_type": "GET",
+    "description": "Count number of records",
+    "enableParams": true
+  },
+  "Count By Post": {
+    "url_segments": "api/count/posts",
+    "request_type": "POST",
+    "description": "Count number of records using POST request",
+    "enableParams": true,
+    "authorization":{  
+        "roles": [
+            "admin"
+        ]
+    }
+  },
+  "Create": {
+    "url_segments": "api/create/posts",
+    "request_type": "POST",
+    "description": "Insert database record",
+    "enableParams": true,
+    "authorization": "*",
+    "beforeHook": "fetch_new_tutorial"
+  },
+  "Insert Batch": {
+    "url_segments": "api/batch/posts",
+    "request_type": "POST",
+    "description": "Insert multiple records",
+    "enableParams": true
+  },
+  "Update": {
+    "url_segments": "api/update/posts/{id}",
+    "request_type": "PUT",
+    "description": "Update a database record",
+    "enableParams": true,
+    "required_fields": [
+      {
+        "name": "id",
+        "label": "ID"
+      }
+    ]
+  },
+  "Destroy": {
+    "url_segments": "api/destroy/posts",
+    "request_type": "DELETE",
+    "description": "Delete row or rows",
+    "enableParams": true
+  },
+  "Delete One": {
+    "url_segments": "api/delete/posts/{id}",
+    "request_type": "DELETE",
+    "description": "Delete one row",
+    "required_fields": [
+      {
+        "name": "id",
+        "label": "ID"
+      }
+    ]
+  }
+}
